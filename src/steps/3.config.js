@@ -2,7 +2,6 @@ import {mkdirpSync, writeFileSync} from "fs-extra";
 import execSync from "../services/exec-sync";
 import log from "../services/logger";
 
-
 export default function config ({sourceDir, environmentVariables}) {
     // Write environment variables in the format required by the `dotenv` npm
     // module
