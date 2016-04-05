@@ -13,6 +13,13 @@
     "prepublish": "npm run clean && npm run build"
   },
   "author": "Team Wattellina <wattellina@mondora.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lk-architecture/lk-lambda-deploy.git"
+  },
+    "bugs": {
+    "url": "https://github.com/lk-architecture/lk-lambda-deploy/issues"
+  },
   "license": "Apache-2.0",
   "devDependencies": {
     "babel": "^6.5.2",
