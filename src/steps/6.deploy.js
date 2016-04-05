@@ -29,7 +29,7 @@ export default function bundle (options) {
             `--role ${lambdaRole}`,
             "--handler index.handler",
             `--zip-file ${bundleDir}/bundle.zip`
-        ].join(""), {env: awsCliEnv});
+        ].join(" "), {env: awsCliEnv});
         break;
     case true:
         // Update function code
@@ -39,14 +39,14 @@ export default function bundle (options) {
             "aws lambda update-function-code",
             `--function-name ${lambdaName}`,
             `--zip-file ${bundleDir}/bundle.zip`
-        ].join(""), {env: awsCliEnv});
+        ].join(" "), {env: awsCliEnv});
         // Update function configuration (just the role for now)
         log.info(`Updating function configuration for lambda ${lambdaName}`);
         execSync([
             "aws lambda update-function-configuration",
             `--function-name ${lambdaName}`,
             `--role ${lambdaRole}`
-        ].join(""), {env: awsCliEnv});
+        ].join(" "), {env: awsCliEnv});
         break;
     }
 }
