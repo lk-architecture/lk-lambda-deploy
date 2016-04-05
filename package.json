@@ -1,6 +1,6 @@
 {
   "name": "lk-lambda-deploy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deploy lambda functions",
   "main": "lib/lk-lambda-deploy.js",
   "bin": {
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/lk-architecture/lk-lambda-deploy.git"
   },
-    "bugs": {
+  "bugs": {
     "url": "https://github.com/lk-architecture/lk-lambda-deploy/issues"
   },
   "license": "Apache-2.0",
