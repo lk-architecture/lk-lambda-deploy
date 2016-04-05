@@ -23,3 +23,6 @@ export default function lkLambdaDeploy (options) {
     bundle(commonOptions);
     deploy(commonOptions);
 }
+
+export {default as stringifyEnvVars} from "./utils/stringify-env-vars";
+export {default as parseEnvVars} from "./utils/parse-env-vars";

@@ -2,6 +2,7 @@
 
 import yargs from "yargs";
 import lkLambdaDeploy from "../lk-lambda-deploy";
+import parseEnvVars from "../utils/parse-env-vars";
 
 const argv = yargs
     .help("help")
@@ -44,5 +45,5 @@ const argv = yargs
 
 lkLambdaDeploy({
     ...argv,
-    environmentVariables: JSON.parse(argv.environmentVariables)
+    environmentVariables: parseEnvVars(argv.environmentVariables)
 });
