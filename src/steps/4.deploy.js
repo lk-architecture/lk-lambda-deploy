@@ -2,14 +2,14 @@ import execSync from "../services/exec-sync";
 import log from "../services/logger";
 import lambdaExists from "../utils/lambda-exists";
 
-export default function bundle (options) {
+export default function deploy (options) {
     const {
         awsAccessKeyId,
         awsSecretAccessKey,
         awsRegion,
         lambdaName,
         lambdaRole,
-        bundleDir
+        sourceDir
     } = options;
     // Create/update the lambda function
     const awsCliEnv = {
@@ -28,7 +28,7 @@ export default function bundle (options) {
             "--runtime nodejs",
             `--role ${lambdaRole}`,
             "--handler index.handler",
-            `--zip-file ${bundleDir}/bundle.zip`
+            `--zip-file ${sourceDir}/bundle.zip`
         ].join(" "), {env: awsCliEnv});
         break;
     case true:
@@ -38,7 +38,7 @@ export default function bundle (options) {
         execSync([
             "aws lambda update-function-code",
             `--function-name ${lambdaName}`,
-            `--zip-file ${bundleDir}/bundle.zip`
+            `--zip-file ${sourceDir}/bundle.zip`
         ].join(" "), {env: awsCliEnv});
         // Update function configuration (just the role for now)
         log.info(`Updating function configuration for lambda ${lambdaName}`);
