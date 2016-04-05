@@ -3,5 +3,7 @@ import log from "../services/logger";
 
 export default function build ({sourceDir}) {
     log.info("Building lambda");
-    execSync(`/bin/sh ${sourceDir}/Lambdafile`);
+    execSync(`/bin/sh ${sourceDir}/Lambdafile`, {
+        cwd: sourceDir
+    });
 }
