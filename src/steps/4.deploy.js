@@ -28,7 +28,7 @@ export default function deploy (options) {
             "--runtime nodejs",
             `--role ${lambdaRole}`,
             "--handler index.handler",
-            `--zip-file ${sourceDir}/bundle.zip`
+            `--zip-file fileb://${sourceDir}/bundle.zip`
         ].join(" "), {env: awsCliEnv});
         break;
     case true:
@@ -38,7 +38,7 @@ export default function deploy (options) {
         execSync([
             "aws lambda update-function-code",
             `--function-name ${lambdaName}`,
-            `--zip-file ${sourceDir}/bundle.zip`
+            `--zip-file fileb://${sourceDir}/bundle.zip`
         ].join(" "), {env: awsCliEnv});
         // Update function configuration (just the role for now)
         log.info(`Updating function configuration for lambda ${lambdaName}`);
