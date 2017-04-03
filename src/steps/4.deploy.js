@@ -25,7 +25,7 @@ export default function deploy (options) {
         execSync([
             "aws lambda create-function",
             `--function-name ${lambdaName}`,
-            "--runtime nodejs",
+            "--runtime nodejs4.3",
             `--role ${lambdaRole}`,
             "--handler index.handler",
             `--zip-file fileb://${sourceDir}/bundle.zip`
