@@ -1,6 +1,6 @@
 {
   "name": "lk-lambda-deploy",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Deploy lambda functions",
   "main": "lib/lk-lambda-deploy.js",
   "bin": {
